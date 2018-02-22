@@ -1,7 +1,7 @@
 Usage
 =====
 
-Change the `command` to use your own Go program command (Only leela zero supported now), you can also use `--command` option to override the config.
+Change the `command` in `config.yml` to use your own Go program command (Only leela zero supported now), you can also use `--command` option to override the config.
 
 `./run.py` will run all tests
 
