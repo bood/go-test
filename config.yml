@@ -1,0 +1,44 @@
+---
+command: /Users/Bood/mypro/leela-zero/bin/leelaz -d -t 1 -p 1600 --noponder -w /Users/Bood/mypro/leela-zero/bin/af9
+tests:
+  # Ladder tests
+  - sgf: ladder1.sgf
+    group: ladder
+    move: black
+    no_move:
+      - P7
+  - sgf: ladder2.sgf
+    group: ladder
+    move: black
+    no_move:
+      - G4
+  - sgf: ladder3.sgf
+    group: ladder
+    move: white
+    no_move:
+      - P11
+  - sgf: ladder4.sgf
+    group: ladder
+    move: black
+    no_move:
+      - P6
+  - sgf: ladder5.sgf
+    group: ladder
+    move: white
+    no_move:
+      - J6
+
+  # Life & Death tests
+  - sgf: lifedeath1.sgf
+    group: lifedeath
+    move: white
+    yes_move:
+      - M10
+  - sgf: longdragon1.sgf
+    group: lifedeath
+    move: white
+    max_win_rate: 40
+  - sgf: longdragon2.sgf
+    group: lifedeath
+    move: white
+    max_win_rate: 40

@@ -99,3 +99,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# leelaz tuning configs
+leelaz_opencl_tuning
+leelaz_tuners
