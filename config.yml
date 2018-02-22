@@ -27,6 +27,16 @@ tests:
     move: white
     no_move:
       - J6
+  - sgf: ladder6.sgf
+    group: ladder
+    move: white
+    no_move:
+      - F14
+  - sgf: ladder7.sgf
+    group: ladder
+    move: white
+    no_move:
+      - G6
 
   # Life & Death tests
   - sgf: lifedeath1.sgf
