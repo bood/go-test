@@ -68,7 +68,7 @@ for test in tests:
     my_print("%s\n" % test['sgf'])
     gtp = "loadsgf ./sgf/%s\ngenmove %s" % (test['sgf'], test['move'])
     debug("%s\n" % gtp)
-    line = subprocess.check_output("echo '%s' | %s 2>&1 | egrep -- '^\s+[A-Z]\d+ +->' | head -1 | tr -d '[:cntrl:]'" % (gtp, command), shell=True)
+    line = subprocess.check_output("echo '%s' | %s 2>&1 | egrep -- '^\s+[A-Z][0-9]+ +->' | head -1 | tr -d '[:cntrl:]'" % (gtp, command), shell=True)
     debug("%s\n" % line)
 
     match = re.search('\(V: (\d+\.\d+)%\).+PV: (.+)', line)
