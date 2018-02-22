@@ -68,8 +68,9 @@ for test in tests:
     my_print("%s\n" % test['sgf'])
     gtp = "loadsgf ./sgf/%s\ngenmove %s" % (test['sgf'], test['move'])
     debug("%s\n" % gtp)
-    line = subprocess.check_output("echo '%s' | %s 2>&1 | egrep -- '^\s+[A-Z][0-9]+ +->' | head -1 | tr -d '[:cntrl:]'" % (gtp, command), shell=True)
-    debug("%s\n" % line)
+    lines = subprocess.check_output("echo '%s' | %s 2>&1 | egrep -- '^\s+[A-Z][0-9]+ +->'" % (gtp, command), shell=True)
+    debug("%s\n" % lines)
+    line = subprocess.check_output("echo '%s' | head -1 | tr -d '[:cntrl:]'" % lines, shell=True)
 
     match = re.search('\(V: (\d+\.\d+)%\).+PV: (.+)', line)
     win_rate = float(match.group(1))
