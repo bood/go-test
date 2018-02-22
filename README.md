@@ -36,7 +36,7 @@ Add tests
 
 1. Put your sgf file in `sgf` dir, e.g. `ladder6.sgf`
 
-2. Add an entry in `tests` section, with following information:
+2. Update `config.yml` with an entry in `tests` section, with following information:
    * `sgf` file name
    * `group` test group it belongs to
    * `move` who's turn it is now
