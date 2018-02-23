@@ -75,13 +75,14 @@ for test in tests:
     match = re.search('\(V: (\d+\.\d+)%\).+PV: (.+)', line)
     win_rate = float(match.group(1))
     moves = match.group(2).split(' ')
+    next_move = moves[0]
 
     if test.get('yes_move'):
         yes_moves = [m.upper() for m in test['yes_move']]
-        print_status(line, any([find(moves, move) % 2 == 0 for move in yes_moves]))
+        print_status(line, next_move in yes_moves)
     elif test.get('no_move'):
         no_moves = [m.upper() for m in test['no_move']]
-        print_status(line, not any([find(moves, move) % 2 == 0 for move in no_moves]))
+        print_status(line, next_move not in no_moves)
     elif test.get('max_win_rate'):
         print_status(line, win_rate <= float(test['max_win_rate']))
     else:
