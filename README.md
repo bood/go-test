@@ -39,6 +39,7 @@ Add tests
 2. Update `config.yml` with an entry in `tests` section, with following information:
    * `sgf` file name
    * `group` test group it belongs to
+   * `number` which move number to start with
    * `move` who's turn it is now
    * test condition, one of the following (only one will be used):
      - `yes_move`: a list of moves it should choose, fail otherwise 

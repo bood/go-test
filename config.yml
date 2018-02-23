@@ -56,3 +56,11 @@ tests:
     group: lifedeath
     move: white
     max_win_rate: 40
+
+  # Large group sensitive tests
+  - sgf: largegroup1.sgf
+    group: largegroup
+    number: 294
+    move: white
+    yes_move:
+      - E1

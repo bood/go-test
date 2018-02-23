@@ -58,7 +58,10 @@ def find(values, value):
 
 
 def do_single_test(test):
-    gtp = "loadsgf ./sgf/%s\ngenmove %s" % (test['sgf'], test['move'])
+    if test.get('number'):
+        gtp = "loadsgf ./sgf/%s %s\ngenmove %s" % (test['sgf'], test['number'], test['move'])
+    else:
+        gtp = "loadsgf ./sgf/%s\ngenmove %s" % (test['sgf'], test['move'])
     lines = subprocess.check_output("echo '%s' | %s 2>&1 | egrep -- '^\s+[A-Z][0-9]+ +->'" % (gtp, command), shell=True)
     line = subprocess.check_output("echo '%s' | head -1 | tr -d '[:cntrl:]'" % lines, shell=True)
     debug("%s\n" % line)
