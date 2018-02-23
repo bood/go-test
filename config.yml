@@ -52,3 +52,7 @@ tests:
     group: lifedeath
     move: white
     max_win_rate: 40
+  - sgf: winrate_easy1.sgf
+    group: lifedeath
+    move: white
+    max_win_rate: 40
