@@ -26,6 +26,10 @@ MULTI_RUN_GROUPS = ("ladder")
 DEFAULT_MULTI_RUNS = 10
 
 
+group_score = {}
+group_total = {}
+
+
 def my_print(message):
     print(message, end="")
 
@@ -57,6 +61,16 @@ def find(values, value):
         return -1
 
 
+def update_score(test, result):
+    group = test['group']
+    if group_score.get(group):
+        group_total[group] += 1
+        group_score[group] += 1 if result else 0
+    else:
+        group_total[group] = 1
+        group_score[group] = 1 if result else 0
+
+
 def do_single_test(test):
     if test.get('number'):
         gtp = "loadsgf ./sgf/%s %s\ngenmove %s" % (test['sgf'], test['number'], test['move'])
@@ -73,14 +87,17 @@ def do_single_test(test):
 
     if test.get('yes_move'):
         yes_moves = [m.upper() for m in test['yes_move']]
-        return (line, next_move in yes_moves)
+        result = next_move in yes_moves
     elif test.get('no_move'):
         no_moves = [m.upper() for m in test['no_move']]
-        return (line, next_move not in no_moves)
+        result = next_move not in no_moves
     elif test.get('max_win_rate'):
-        return (line, win_rate <= float(test['max_win_rate']))
+        result = win_rate <= float(test['max_win_rate'])
     else:
         raise Exception("Neither yes_move, no_move or win_rate found")
+
+    update_score(test, result)
+    return (line, result)
 
 
 parser = argparse.ArgumentParser(description='Scenario testing tool for Go')
@@ -117,3 +134,11 @@ for test in tests:
     else:
         (line, result) = do_single_test(test)
         print_status(line, result)
+
+for group in group_score:
+    color = bcolors.WARNING
+    if group_score[group] == 0:
+        color = bcolors.FAIL
+    elif group_score[group] == group_total[group]:
+        color = bcolors.OKGREEN
+    my_print("%s: %s[%s/%s PASSES]%s\n" % (group, color, group_score[group], group_total[group], bcolors.ENDC))
