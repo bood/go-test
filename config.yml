@@ -64,3 +64,10 @@ tests:
     move: white
     yes_move:
       - E1
+
+  - sgf: endgame1.sgf
+    group: endgame
+    number: 289
+    move: black
+    yes_move:
+      - S19
