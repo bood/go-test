@@ -44,6 +44,12 @@ tests:
     move: white
     yes_move:
       - M10
+  - sgf: lifedeath2.sgf
+    group: lifedeath
+    number: 220
+    move: white
+    yes_move:
+      - S19 # Secure top right corner
   - sgf: longdragon1.sgf
     group: lifedeath
     move: white
