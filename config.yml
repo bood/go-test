@@ -77,3 +77,10 @@ tests:
     move: black
     yes_move:
       - S19
+
+  - sgf: endgame2.sgf
+    group: endgame
+    number: 270
+    move: white
+    no_move:
+      - G19
