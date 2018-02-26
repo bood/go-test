@@ -63,13 +63,14 @@ def find(values, value):
 
 def update_score(test, result):
     group = test['group']
-    if group_score.get(group):
-        group_total[group] += 1
-        group_score[group] += 1 if result else 0
-    else:
-        group_total[group] = 1
-        group_score[group] = 1 if result else 0
+    group_total[group] = group_total.get(group, 0) + 1
+    group_score[group] = group_score.get(group, 0) + (1 if result else 0)
 
+
+def mock_single_test(test):
+    result = False
+    update_score(test, result)
+    return ("TEST", result)
 
 def do_single_test(test):
     if test.get('number'):
