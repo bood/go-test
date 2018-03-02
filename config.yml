@@ -84,3 +84,18 @@ tests:
     move: white
     no_move:
       - G19
+
+  # Capture Race tests
+  - sgf: race1.sgf
+    group: race
+    number: 63
+    move: black
+    yes_move:
+      - S11
+
+  - sgf: race2.sgf
+    group: race
+    number: 65
+    move: black
+    yes_move:
+      - R10
