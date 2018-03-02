@@ -81,7 +81,7 @@ def do_single_test(test):
     line = subprocess.check_output("echo '%s' | head -1 | tr -d '[:cntrl:]'" % lines, shell=True)
     debug("%s\n" % line)
 
-    match = re.search('\(V: (\d+\.\d+)%\).+PV: (.+)', line)
+    match = re.search('\(V: +(\d+\.\d+)%\).+PV: +(.+)', line)
     win_rate = float(match.group(1))
     moves = match.group(2).split(' ')
     next_move = moves[0]
