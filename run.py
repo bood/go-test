@@ -72,14 +72,17 @@ def mock_single_test(test):
     update_score(test, result)
     return ("TEST", result)
 
+
 def do_single_test(test):
     if test.get('number'):
         gtp = "loadsgf ./sgf/%s %s\ngenmove %s" % (test['sgf'], test['number'], test['move'])
     else:
         gtp = "loadsgf ./sgf/%s\ngenmove %s" % (test['sgf'], test['move'])
-    lines = subprocess.check_output("echo '%s' | %s 2>&1 | egrep -- '^\s+[A-Z][0-9]+ +->'" % (gtp, command), shell=True)
-    line = subprocess.check_output("echo '%s' | head -1 | tr -d '[:cntrl:]'" % lines, shell=True)
-    debug("%s\n" % line)
+    lines = subprocess.check_output("echo '%s' | %s" % (gtp, command), stderr=subprocess.STDOUT, shell=True).split("\n")
+    #   E1 ->     792 (V: 37.43%) (N: 31.68%) PV: E1 H5 F6 G6 F7 E13 D11 D10 E10 E9 F9 E11
+    lines = [line for line in lines if re.search('^\s+[A-Z][0-9]+ +->', line)]
+    debug("\n%s\n" % ("\n".join(lines)))
+    line = lines[0]
 
     match = re.search('\(V: +(\d+\.\d+)%\).+PV: +(.+)', line)
     win_rate = float(match.group(1))
