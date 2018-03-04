@@ -124,9 +124,10 @@ tests = config['tests']
 my_print("Command: %s\n" % command)
 
 for test in tests:
-    if args.case and test['sgf'] not in args.case:
+    name = test['name']
+    if args.case and name not in args.case:
         continue
-    my_print("%s\n" % test['sgf'])
+    my_print("%s\n" % name)
     if test['group'] in MULTI_RUN_GROUPS:
         results = []
         for i in xrange(0, DEFAULT_MULTI_RUNS):

@@ -37,6 +37,7 @@ Add tests
 1. Put your sgf file in `sgf` dir, e.g. `ladder6.sgf`
 
 2. Update `config.yml` with an entry in `tests` section, with following information:
+   * `name` test name
    * `sgf` file name
    * `group` test group it belongs to
    * `number` which move number to start with

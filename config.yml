@@ -2,63 +2,65 @@
 command: /Users/Bood/mypro/leela-zero/bin/leelaz -d -t 1 -p 1600 --noponder -w /Users/Bood/mypro/leela-zero/bin/af9
 tests:
   # Ladder tests
-  - sgf: ladder1.sgf
+  - name: ladder1.sgf
+    sgf: ladder1.sgf
     group: ladder
     move: black
     no_move:
       - P7
-  - sgf: ladder2.sgf
+  - name: ladder2
+    sgf: ladder2.sgf
     group: ladder
     move: black
     no_move:
       - G4
-  - sgf: ladder3.sgf
+  - name: ladder3
+    sgf: ladder3.sgf
     group: ladder
     move: white
     no_move:
       - P11
-  - sgf: ladder4.sgf
+  - name: ladder4
+    sgf: ladder4.sgf
     group: ladder
     move: black
     no_move:
       - P6
-  - sgf: ladder5.sgf
+  - name: ladder5
+    sgf: ladder5.sgf
     group: ladder
     move: white
     no_move:
       - J6
-  - sgf: ladder6.sgf
+  - name: ladder6
+    sgf: ladder6.sgf
     group: ladder
     move: white
     no_move:
       - F14
-  - sgf: ladder7.sgf
+  - name: ladder7
+    sgf: ladder7.sgf
     group: ladder
     move: white
     no_move:
       - G6
 
   # Life & Death tests
-  - sgf: lifedeath1.sgf
+  - name: lifedeath1
+    sgf: lifedeath1.sgf
     group: lifedeath
     move: white
     yes_move:
       - M10
-  - sgf: lifedeath2.sgf
+  - name: lifedeath2
+    sgf: lifedeath2.sgf
     group: lifedeath
     number: 220
     move: white
     yes_move:
       - S19 # Secure top right corner
-  - sgf: longdragon1.sgf
-    group: lifedeath
-    move: white
-    max_win_rate: 40
-  - sgf: longdragon2.sgf
-    group: lifedeath
-    move: white
-    max_win_rate: 40
-  - sgf: winrate_easy1.sgf
+  - name: lifedeath3_easy
+    sgf: zen7-LZaf9.sgf
     group: lifedeath
     move: white
     max_win_rate: 40
@@ -70,15 +72,27 @@ tests:
     move: white
     yes_move:
       - E1
+  - name: largegroup2
+    sgf: zen7_LZ.sgf
+    group: largegroup
+    move: white
+    max_win_rate: 40
+  - name: largegroup3
+    sgf: jinduan(P)_LZ.sgf
+    group: largegroup
+    move: white
+    max_win_rate: 40
 
-  - sgf: endgame1.sgf
+  - name: endgame1
+    sgf: endgame1.sgf
     group: endgame
     number: 289
     move: black
     yes_move:
       - S19
 
-  - sgf: endgame2.sgf
+  - name: endgame2
+    sgf: endgame2.sgf
     group: endgame
     number: 270
     move: white
@@ -86,14 +100,16 @@ tests:
       - G19
 
   # Capture Race tests
-  - sgf: race1.sgf
+  - name: race1
+    sgf: MaTianFang_LZ_20180227.sgf
     group: race
     number: 63
     move: black
     yes_move:
       - S11
 
-  - sgf: race2.sgf
+  - name: race2
+    sgf: MaTianFang_LZ_20180227.sgf
     group: race
     number: 65
     move: black
