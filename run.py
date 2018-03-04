@@ -109,6 +109,8 @@ parser.add_argument('--debug', action='store_true', help='Debug messages')
 parser.add_argument('--command', help='Override the test command in config.yml')
 parser.add_argument('--case', action='append',
                     help='Only run specify cases')
+parser.add_argument('--group', action='append',
+                    help='Only run cases of specify groups')
 
 args = parser.parse_args()
 
@@ -125,9 +127,12 @@ my_print("Command: %s\n" % command)
 
 for test in tests:
     name = test['name']
+    group = test['group']
     if args.case and name not in args.case:
         continue
-    my_print("%s\n" % name)
+    if args.group and group not in args.group:
+        continue
+    my_print("%s - %s\n" % (name, group))
     if test['group'] in MULTI_RUN_GROUPS:
         results = []
         for i in xrange(0, DEFAULT_MULTI_RUNS):
