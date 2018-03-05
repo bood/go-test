@@ -64,17 +64,9 @@ tests:
     group: lifedeath
     move: white
     max_win_rate: 40
-  - name: lifedeath4_hell
-    sgf: lifedeath4_hell.sgf
-    group: lifedeath
-    number: 107
-    move: black
-    yes_move:
-      - G1
 
   # Large group sensitive tests
-  - name: largegroup1
-    sgf: largegroup1.sgf
+  - sgf: largegroup1.sgf
     group: largegroup
     number: 294
     move: white
