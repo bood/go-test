@@ -44,6 +44,13 @@ tests:
     move: white
     no_move:
       - G6
+  - name: 33point-ladder
+    sgf: aq_lz_33point_ladder.sgf
+    group: ladder
+    number: 15
+    move: black
+    no_move:
+      - Q7
 
   # Life & Death tests
   - name: lifedeath1
