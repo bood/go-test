@@ -5,6 +5,7 @@ import re
 import subprocess
 import yaml
 import argparse
+import sys
 
 
 class bcolors:
@@ -32,11 +33,13 @@ group_total = {}
 
 def my_print(message):
     print(message, end="")
+    sys.stdout.flush()
 
 
 def print_status(moves, is_pass):
     message = ' '.join(moves) if isinstance(moves, list) else str(moves)
     print("%s %s" % (PASS_STATUS if is_pass else FAIL_STATUS, message))
+    sys.stdout.flush()
 
 
 def print_multi_status(results):
@@ -47,11 +50,13 @@ def print_multi_status(results):
     elif pass_num == 0:
         color = bcolors.FAIL
     print("%s[%s/%s PASSES]%s" % (color, pass_num, len(results), bcolors.ENDC))
+    sys.stdout.flush()
 
 
 def debug(message):
     if args.debug:
         print("DEBUG: %s" % message, end='')
+        sys.stdout.flush()
 
 
 def find(values, value):
