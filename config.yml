@@ -53,44 +53,50 @@ tests:
       - Q7
 
   # Life & Death tests
-  - name: lifedeath1
+  - name: make_life1
     sgf: lifedeath1.sgf
     group: lifedeath
     move: white
     yes_move:
       - M10
-  - name: lifedeath2
+  - name: j_group_live1
     sgf: lifedeath2.sgf
     group: lifedeath
     number: 220
     move: white
     yes_move:
       - S19 # Secure top right corner
-  - name: lifedeath3_easy
-    sgf: zen7-LZaf9.sgf
-    group: lifedeath
-    move: white
-    max_win_rate: 40
 
   # Large group sensitive tests
-  - name: largegroup1
-    sgf: largegroup1.sgf
+  - name: largegroup_no_liberty_dead
+    sgf: zen7-LZaf9.sgf
+    group: largegroup
+    move: white
+    max_win_rate: 10
+  - name: largegroup_some_liberty_dead
+    sgf: zen7-LZaf9.sgf
+    group: largegroup
+    number: 256
+    move: white
+    max_win_rate: 10
+  - name: largegroup_atari1
+    sgf: largegroup_atari1.sgf
     group: largegroup
     number: 294
     move: white
     yes_move:
       - E1
-  - name: largegroup2
+  - name: largegroup_dead1
     sgf: zen7_LZ.sgf
     group: largegroup
     move: white
     max_win_rate: 40
-  - name: largegroup3
+  - name: largegroup_dead2
     sgf: jinduan(P)_LZ.sgf
     group: largegroup
     move: white
     max_win_rate: 40
-  - name: single_eye
+  - name: largegroup_dead3
     sgf: zen7_lz_largegroup_20180306.sgf
     group: largegroup
     number: 206
