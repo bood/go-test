@@ -80,9 +80,11 @@ def mock_single_test(test):
 
 def do_single_test(test):
     if test.get('number'):
-        gtp = "loadsgf ./sgf/%s %s\ngenmove %s" % (test['sgf'], test['number'], test['move'])
+        gtp = "loadsgf ./sgf/%s %s\n" % (test['sgf'], test['number'])
     else:
-        gtp = "loadsgf ./sgf/%s\ngenmove %s" % (test['sgf'], test['move'])
+        gtp = "loadsgf ./sgf/%s\n" % test['sgf']
+    gtp += "time_settings 0 100 0\n"  # Ensure playouts are not limited on slow machines
+    gtp += "genmove %s" % test['move']
     lines = subprocess.check_output("echo '%s' | %s" % (gtp, command), stderr=subprocess.STDOUT, shell=True).split("\n")
     #   E1 ->     792 (V: 37.43%) (N: 31.68%) PV: E1 H5 F6 G6 F7 E13 D11 D10 E10 E9 F9 E11
     lines = [line for line in lines if re.search('^\s+[A-Z][0-9]+ +->', line)]
