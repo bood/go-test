@@ -90,6 +90,12 @@ tests:
     group: largegroup
     move: white
     max_win_rate: 40
+  - name: single_eye
+    sgf: zen7_lz_largegroup_20180306.sgf
+    group: largegroup
+    number: 206
+    move: white
+    max_win_rate: 40
 
   - name: endgame1
     sgf: endgame1.sgf
