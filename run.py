@@ -87,7 +87,7 @@ def do_single_test(test):
     gtp += "genmove %s" % test['move']
     lines = subprocess.check_output("echo '%s' | %s" % (gtp, command), stderr=subprocess.STDOUT, shell=True).split("\n")
     #   E1 ->     792 (V: 37.43%) (N: 31.68%) PV: E1 H5 F6 G6 F7 E13 D11 D10 E10 E9 F9 E11
-    lines = [line for line in lines if re.search('^\s+[A-Z][0-9]+ +->', line)]
+    lines = [line for line in lines if re.match('^\s+[A-Z][0-9]+ +->|^[0-9]+\s+visits', line)]
     debug("\n%s\n" % ("\n".join(lines)))
     line = lines[0]
 
