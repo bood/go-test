@@ -66,6 +66,14 @@ tests:
     move: white
     yes_move:
       - M19
+  - name: make_life3
+    sgf: 隐忍黑衣人_alphaleela_20180307.sgf
+    group: lifedeath
+    number: 217
+    move: white
+    yes_move:
+      - P9
+      - Q9
   - name: j_group_live1
     sgf: lifedeath2.sgf
     group: lifedeath
