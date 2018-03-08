@@ -59,6 +59,13 @@ tests:
     move: white
     yes_move:
       - M10
+  - name: make_life2
+    sgf: 娱乐版围棋执黑中盘胜alphaleela_20180308.sgf
+    group: lifedeath
+    number: 116
+    move: white
+    yes_move:
+      - M19
   - name: j_group_live1
     sgf: lifedeath2.sgf
     group: lifedeath
@@ -102,6 +109,12 @@ tests:
     number: 206
     move: white
     max_win_rate: 40
+  - name: largegroup_dead4
+    sgf: 娱乐版围棋执黑中盘胜alphaleela_20180308.sgf
+    group: largegroup
+    number: 196
+    move: white
+    max_win_rate: 30
 
   - name: endgame1
     sgf: endgame1.sgf
