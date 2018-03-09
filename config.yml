@@ -70,6 +70,13 @@ tests:
     move: black
     no_move:
       - Q7
+  - name: cut-ladder-misread
+    sgf: ladder_misread_by_cut_52_20180308.sgf
+    group: ladder
+    number: 52
+    move: white
+    no_move:
+      - G3
 
   # Life & Death tests
   - name: make_life1

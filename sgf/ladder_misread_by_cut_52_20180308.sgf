@@ -1,0 +1,16 @@
+(;CA[utf-8]C[原始对局：Leela Zero 0.12 CPU，-d -g -t1 -v8000 -w leelaz-model-256000（20B尝鲜版权重）]
+AP[GoGui:1.4.9]FF[4]DT[2018-03-08]PW[Leela Zero 0.12 CPUonly (20B)]KM[7.5]MULTIGOGM[0]
+;B[pd];W[dp];B[pq];W[dd];B[cc];W[dc];B[cd];W[ce];B[be];W[bf];B[cf];W[de];B[bg];W[bd]
+;B[af];W[bc];B[fq];W[dn];B[cl];W[eq];B[fp];W[qc];B[qd];W[pc];B[oc];W[ob];B[nb];W[nc]
+;B[od];W[mb];B[pb];W[na];B[qb];W[qo];B[np];W[ql];B[cq];W[fr];B[gr];W[dr];B[co];W[cp]
+;B[bp];W[do];B[bn];W[cn];B[bo];W[dl];B[dk];W[el];B[cm]
+(;W[gq]C[Leela Zero 0.12 CPU，-d -g -t1 -v8000 -w leelaz-model-256000（20B尝鲜版权重）的选择。]
+;B[fs];W[er];B[hq];W[gp];B[go];W[hp];B[ip];W[ho];B[hn];W[io];B[jo];W[in];B[im];W[jn]
+;B[kn];W[jm];B[jl];W[km];B[lm];W[kl];B[kk];W[ll];B[ml];W[lk];B[lj];W[mk];B[nk];W[mj]
+;B[mi];W[nj];B[oj];W[ni];B[nh];W[oi];B[pi];W[oh];B[og];W[ph];B[qh];W[pg];B[pf];W[qg]
+;B[rg];W[qf];B[rf];W[qe];B[re];W[qi];B[pe];W[ek]C[Leela Zero 0.12 CPU，-d -g -t1 -v8000 -w leelaz-model-256000（20B尝鲜版权重）的选择。])
+(;W[gq]C[Leela Zero 0.12 CPU MKL-TBB -g --noponder -t1 -p10000 -w TheLast6BMixture(6w29=76f-4cb-6b0-6f9-9d9-004-ec3)的选择。]
+;B[fs];W[er];B[hq];W[gp];B[go];W[hp];B[ip];W[ho]C[Leela Zero 0.12 CPU MKL-TBB -g --noponder -t1 -p10000 -w TheLast6BMixture(6w29=76f-4cb-6b0-6f9-9d9-004-ec3)的选择。])
+(;W[gq]C[Leela Zero 0.12 CPU -d -g --noponder -t1 -v8000 -w b3a805（10B权重）的选择。]
+;B[fs];W[er];B[hq];W[gp];B[go];W[hp];B[ip];W[ho];B[hn];W[io];B[jo];W[in];B[im];W[jn]
+C[Leela Zero 0.12 CPU -d -g --noponder -t1 -v8000 -w b3a805（10B权重）的选择。]))
