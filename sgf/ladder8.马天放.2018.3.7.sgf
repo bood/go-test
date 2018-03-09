@@ -1,0 +1,23 @@
+(;CA[utf-8]C[前8手引用我的比赛对局。
+征子BUG测试：
+原始对局使用Leela Zero 0.12 CPU-MKL-TBB版，参数是-g --noponder -t1 -p10000 -w，权重为3150c1。
+其它测试权重的参数均为-d -g -t1 -v8000 -w。
+最后的是老版Leela的选择。]
+AP[GoGui:1.4.9]FF[4]DT[2018-03-07]PB[Leela Zero 0.12 CPUonly-MKL-TBB-Win64 3150c1]
+KM[7.5]MULTIGOGM[0]
+;B[pd];W[dd];B[pq];W[dq];B[cc];W[qc];B[cd];W[qd];B[co];W[de];B[dc];W[pe];B[ep];W[eq]
+;B[fp];W[gq];B[fd];W[ci];B[ck];W[ce];B[cg];W[bg];B[bf];W[be];B[bh];W[dg];B[ch];W[dh]
+;B[di];W[ec];B[fc];W[ed];B[eb];W[fb];B[db];W[dj];B[ei];W[fe]
+(;B[cj]C[Leela Zero 0.12 CPUonly-MKL-TBB-Win64 3150c1的选择（原始选择）。]
+;W[gc];B[gd];W[hd];B[ge];W[gf];B[he];W[ie];B[hf];W[hg];B[if];W[jf];B[ig];W[ih];B[jg]
+;W[kg];B[jh];W[ji];B[kh];W[lh];B[ki];W[kj];B[li];W[mi];B[lj];W[lk];B[mj];W[nj];B[mk]
+;W[ml];B[nk];W[ok];B[nl];W[nm];B[ol];W[pl];B[om];W[on];B[pm];W[qm];B[pn];W[po];B[qn]
+;W[rn];B[qo];W[qp];B[ro];W[rp];B[so];W[sp];B[oo];W[sn];B[pc]C[Leela Zero 0.12 CPUonly-MKL-TBB-Win64 3150c1的选择（原始选择）。])
+(;B[cj]C[Leela Zero 0.12 CPUonly-Win64 0255d9的选择。];W[gc];B[gd];W[hd];B[ge]
+C[Leela Zero 0.12 CPUonly-Win64 0255d9的选择。])
+(;B[cj]C[Leela Zero 0.12 CPUonly-Win64 fc2b9a的选择。];W[gc];B[gd]C[Leela Zero 0.12 CPUonly-Win64 fc2b9a的选择。])
+(;B[cj]C[Leela Zero 0.12 CPUonly-Win64 newWeight的选择。];W[gc];B[gd];W[hd]
+;B[ge];W[gf];B[fq];W[fr];B[gr];W[hr];B[he];W[ie];B[hf]C[Leela Zero 0.12 CPUonly-Win64 newWeight的选择。])
+(;B[ge]C[老版Leela 0.11 GPU的选择。];W[gf];B[ff];W[fg];B[ee];W[ef];B[fe];W[cj]
+;B[fj];W[dk];B[bk];W[gg];B[bj];W[gb];B[hc];W[hb];B[ic];W[ib];B[jc];W[bb];B[bc];W[jb]
+;B[kc];W[ad];B[ac];W[ea];B[da];W[ab];B[cf];W[df];B[if];W[fa];B[gp]C[老版Leela 0.11 GPU的选择。]))

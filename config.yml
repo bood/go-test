@@ -44,6 +44,25 @@ tests:
     move: white
     no_move:
       - G6
+  - name: ladder8
+    sgf: ladder8.马天放.2018.3.7.sgf
+    group: ladder
+    number: 41
+    move: black
+    no_move:
+      - G16
+  - name: ladder9
+    sgf: 误逃征子_20180308.sgf
+    group: ladder
+    move: black
+    no_move:
+      - E11
+  - name: ladder10
+    sgf: 看错征子_20180308.sgf
+    group: ladder
+    number: 156
+    move: white
+    max_win_rate: 40
   - name: 33point-ladder
     sgf: aq_lz_33point_ladder.sgf
     group: ladder
