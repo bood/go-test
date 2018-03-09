@@ -32,13 +32,13 @@ group_total = {}
 
 
 def my_print(message):
-    print(message, end="")
+    print(message.encode('utf-8'), end="")
     sys.stdout.flush()
 
 
 def print_status(moves, is_pass):
     message = ' '.join(moves) if isinstance(moves, list) else str(moves)
-    print("%s %s" % (PASS_STATUS if is_pass else FAIL_STATUS, message))
+    print("%s %s" % (PASS_STATUS if is_pass else FAIL_STATUS, message.encode('utf-8')))
     sys.stdout.flush()
 
 
@@ -135,11 +135,12 @@ my_print("Command: %s\n" % command)
 for test in tests:
     name = test['name']
     group = test['group']
+    sgf = test['sgf']
     if args.case and name not in args.case:
         continue
     if args.group and group not in args.group:
         continue
-    my_print("%s - %s\n" % (name, group))
+    my_print("%s - %s (%s)\n" % (name, group, sgf))
     if test['group'] in MULTI_RUN_GROUPS:
         results = []
         for i in xrange(0, DEFAULT_MULTI_RUNS):
