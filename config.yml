@@ -63,6 +63,13 @@ tests:
     number: 156
     move: white
     max_win_rate: 40
+  - name: ladder11
+    sgf: 10b-545权重征子bug.sgf
+    group: ladder
+    number: 56
+    move: white
+    no_move:
+      - K7
   - name: 33point-ladder
     sgf: aq_lz_33point_ladder.sgf
     group: ladder
