@@ -172,6 +172,15 @@ tests:
     no_move:
       - G19
 
+  - name: reduce_liberty_misread
+    sgf: 低K官子看错输棋.sgf
+    group: endgame
+    number: 322
+    move: white
+    yes_move:
+      - H7
+      - K8
+
   # Capture Race tests
   - name: race1
     sgf: MaTianFang_LZ_20180227.sgf
