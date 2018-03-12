@@ -149,6 +149,12 @@ tests:
     number: 196
     move: white
     max_win_rate: 30
+  - name: dead_group_misread
+    sgf: 11990416-120-Bifron-RoyalZero.sgf
+    group: largegroup
+    number: 117
+    move: black
+    max_win_rate: 40
 
   - name: endgame1
     sgf: endgame1.sgf
