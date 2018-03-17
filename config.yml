@@ -1,4 +1,4 @@
----
+﻿---
 command: /Users/Bood/mypro/leela-zero/bin/leelaz -d -t 1 -p 1600 --noponder -w /Users/Bood/mypro/leela-zero/bin/af9
 tests:
   # Ladder tests
@@ -110,10 +110,10 @@ tests:
   - name: j_group_live1
     sgf: lifedeath2.sgf
     group: lifedeath
-    number: 220
+    number: 222
     move: white
     yes_move:
-      - S19 # Secure top right corner
+      - S18 # This moves makes life for white
 
   # Large group sensitive tests
   - name: largegroup_no_liberty_dead
