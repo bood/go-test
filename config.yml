@@ -84,6 +84,13 @@ tests:
     move: white
     no_move:
       - G3
+  - name: ladder12
+    sgf: 陈文政_LeelaZero_20180315.sgf
+    group: ladder
+    number: 106
+    move: white
+    no_move:
+      - M9
 
   # Life & Death tests
   - name: make_life1
