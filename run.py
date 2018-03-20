@@ -32,13 +32,13 @@ group_total = {}
 
 
 def my_print(message):
-    print(message.encode('utf-8'), end="")
+    print(message, end="")
     sys.stdout.flush()
 
 
 def print_status(moves, is_pass):
     message = ' '.join(moves) if isinstance(moves, list) else str(moves)
-    print("%s %s" % (PASS_STATUS if is_pass else FAIL_STATUS, message.encode('utf-8')))
+    print("%s %s" % (PASS_STATUS if is_pass else FAIL_STATUS, message))
     sys.stdout.flush()
 
 
@@ -131,7 +131,7 @@ parser.add_argument('--group', action='append',
 
 args = parser.parse_args()
 
-with open("config.yml", 'r') as stream:
+with open("config.yml", 'r', encoding='utf-8') as stream:
     config = yaml.load(stream)
 
 if args.command:
