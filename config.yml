@@ -121,6 +121,13 @@ tests:
     move: white
     yes_move:
       - S18 # This moves makes life for white
+  - name: make_life4
+    sgf: 2017围丙第二轮_胡然闵_杨冬.sgf
+    group: lifedeath
+    number: 153
+    move: black
+    yes_move:
+      - M1
 
   # Large group sensitive tests
   - name: largegroup_no_liberty_dead
