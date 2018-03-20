@@ -93,7 +93,7 @@ def do_single_test(test):
     gtp += "genmove %s" % test['move']
     listgtp = gtp.split('\n')
     gtp = "(echo " + " & echo ".join(listgtp) + ")"
-    lines = subprocess.check_output("%s | %s" % (gtp, command), stderr=subprocess.STDOUT, shell=True).split("\n")
+    lines = subprocess.check_output("%s | %s" % (gtp, command), stderr=subprocess.STDOUT, shell=True, encoding='utf8').split("\n")
     #   E1 ->     792 (V: 37.43%) (N: 31.68%) PV: E1 H5 F6 G6 F7 E13 D11 D10 E10 E9 F9 E11
     lines = [line for line in lines if re.match('^\s+[A-Z][0-9]+ +->|^[0-9]+\s+visits', line)]
     debug("\n%s\n" % ("\n".join(lines)))
@@ -151,17 +151,14 @@ for test in tests:
     if args.group and group not in args.group:
         continue
     my_print("%s - %s (%s)\n" % (name, group, sgf))
-    if test['group'] in MULTI_RUN_GROUPS:
-        results = []
-        for i in xrange(0, DEFAULT_MULTI_RUNS):
-            my_print("%s " % i)
-            (line, result) = do_single_test(test)
-            results.append(result)
-        my_print("\n")
-        print_multi_status(results)
-    else:
+
+    results = []
+    for i in range(0, DEFAULT_MULTI_RUNS):
+        my_print("%s " % i)
         (line, result) = do_single_test(test)
-        print_status(line, result)
+        results.append(result)
+    my_print("\n")
+    print_multi_status(results)
 
 for group in group_score:
     color = bcolors.WARNING
