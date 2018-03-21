@@ -154,7 +154,7 @@ tests:
     move: white
     max_win_rate: 40
   - name: largegroup_dead2
-    sgf: jinduan(P)_LZ.sgf
+    sgf: jinduan_LZ.sgf
     group: largegroup
     move: white
     max_win_rate: 40
