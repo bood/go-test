@@ -176,6 +176,14 @@ tests:
     number: 117
     move: black
     max_win_rate: 40
+  - name: largegroup_atari2
+    sgf: 毒奶菇_看不见叫吃_20180325.sgf
+    group: largegroup
+    number: 358
+    move: white
+    yes_move:
+      - E13
+      - F11
 
   - name: endgame1
     sgf: endgame1.sgf
