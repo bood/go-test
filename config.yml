@@ -91,6 +91,13 @@ tests:
     move: white
     no_move:
       - M9
+  - name: ladder13
+    sgf: 大斜征子.sgf
+    group: ladder
+    number: 16
+    move: white
+    no_move:
+      - S6
 
   # Life & Death tests
   - name: make_life1
