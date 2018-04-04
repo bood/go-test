@@ -136,13 +136,13 @@ tests:
     move: black
     yes_move:
       - M1
-  - name: make_life4
-    sgf: 2017围丙第二轮_胡然闵_杨冬.sgf
+  - name: make_life5
+    sgf: 双活1.sgf
     group: lifedeath
-    number: 153
-    move: black
+    number: 196
+    move: white
     yes_move:
-      - M1
+      - T9
 
   # Large group sensitive tests
   - name: largegroup_no_liberty_dead
