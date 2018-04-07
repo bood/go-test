@@ -98,6 +98,20 @@ tests:
     move: white
     no_move:
       - S6
+  - name: ladder14
+    sgf: ladder14.sgf
+    group: ladder
+    number: 59
+    move: black
+    no_move:
+      - E16
+  - name: ladder15
+    sgf: 预判征子.sgf
+    group: ladder
+    number: 34
+    move: white
+    no_move:
+      - C10
 
   # Life & Death tests
   - name: make_life1
