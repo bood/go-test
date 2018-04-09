@@ -246,6 +246,23 @@ tests:
     yes_move:
       - J12 # Analyzed by Yang Dong 4P, white can win with this move
 
+  - name: endgame5 # Analyzed by Yang Dong 4P
+    sgf: 2018贺岁杯第二局_一力辽_柯洁.sgf
+    group: endgame
+    number: 217
+    move: black
+    yes_move:
+      - E8
+
+  - name: endgame6 # Analyzed by Yang Dong 4P
+    sgf: 2018贺岁杯第二局_一力辽_柯洁2.sgf
+    group: endgame
+    number: 227
+    move: black
+    yes_move:
+      - E1
+      - J1
+
   - name: reduce_liberty_misread
     sgf: 低K官子看错输棋.sgf
     group: endgame
