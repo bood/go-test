@@ -230,6 +230,22 @@ tests:
     no_move:
       - G19
 
+  - name: endgame3
+    sgf: AGZ_40b_017.sgf
+    group: endgame
+    number: 319
+    move: black
+    yes_move:
+      - T10 # Analyzed by Yang Dong 4P, only winning move
+
+  - name: endgame4
+    sgf: AGZ_40b_017.sgf
+    group: endgame
+    number: 268
+    move: white
+    yes_move:
+      - J12 # Analyzed by Yang Dong 4P, white can win with this move
+
   - name: reduce_liberty_misread
     sgf: 低K官子看错输棋.sgf
     group: endgame
