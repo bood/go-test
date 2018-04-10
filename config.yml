@@ -253,6 +253,7 @@ tests:
     move: black
     yes_move:
       - E8
+      - F8 # F8 also works
 
   - name: endgame6 # Analyzed by Yang Dong 4P
     sgf: 2018贺岁杯第二局_一力辽_柯洁2.sgf
