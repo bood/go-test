@@ -289,3 +289,12 @@ tests:
     move: black
     yes_move:
       - R10
+
+  - name: race3
+    sgf: somebot-godiva-2.sgf
+    group: race
+    number: 238
+    move: white
+    yes_move:
+      - T17
+      - M17
