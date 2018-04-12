@@ -1,7 +1,14 @@
+Requirements
+=====
+
+* Python 3.6.x
+* Install required packages `pip install -r requirements.txt`
+* Windows/Linux/MacOS should all work (submit issue if not)
+
 Usage
 =====
 
-Change the `command` in `config.yml` to use your own Go program command (Only leela zero supported now), you can also use `--command` option to override the config.
+Change the `command` in `command.yml` to use your own Go program command (Only leela zero supported now), you can also use `--command` option to override the config.
 
 `./run.py` will run all tests
 
