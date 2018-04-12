@@ -1,5 +1,4 @@
 ﻿---
-command: /Users/Bood/mypro/leela-zero/bin/leelaz -d -t 1 -p 1600 --noponder -w /Users/Bood/mypro/leela-zero/bin/af9
 tests:
   # Ladder tests
   - name: ladder1.sgf

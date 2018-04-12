@@ -135,10 +135,13 @@ args = parser.parse_args()
 with open("config.yml", 'r', encoding='utf-8') as stream:
     config = yaml.load(stream)
 
+with open("command.yml", 'r', encoding='utf-8') as stream:
+    command_config = yaml.load(stream)
+
 if args.command:
     command = args.command
 else:
-    command = config['command']
+    command = command_config['command']
 tests = config['tests']
 
 my_print("Command: %s\n" % command)
