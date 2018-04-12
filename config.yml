@@ -157,6 +157,20 @@ tests:
     move: white
     yes_move:
       - T9
+  - name: make_life6
+    sgf: 第8届姜堰三国女子擂台赛第5局_李赫_金多瑛.sgf
+    group: lifedeath
+    number: 174
+    move: white
+    yes_move:
+      - F9
+  - name: kill1
+    sgf: 第8届姜堰三国女子擂台赛第5局_李赫_金多瑛.sgf
+    group: lifedeath
+    number: 175
+    move: black
+    yes_move:
+      - G9
 
   # Large group sensitive tests
   - name: largegroup_no_liberty_dead
@@ -298,3 +312,12 @@ tests:
     yes_move:
       - T17
       - M17
+
+  - name: race4
+    sgf: 12383186-296-inelasticneutron-RoyalZero.sgf
+    group: race
+    number: 291
+    move: black
+    yes_move:
+      - A19
+      - C11
