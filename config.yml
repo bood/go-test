@@ -170,6 +170,13 @@ tests:
     move: black
     yes_move:
       - G9
+  - name: make_life7
+    sgf: 打劫走成净死.sgf
+    group: lifedeath
+    number: 119
+    move: black
+    yes_move:
+      - J1
 
   # Large group sensitive tests
   - name: largegroup_no_liberty_dead
@@ -276,6 +283,12 @@ tests:
     yes_move:
       - E1
       - J1
+
+  - name: endgame7
+    sgf: AGZ_40b_017.sgf
+    group: endgame
+    move: white
+    max_win_rate: 10
 
   - name: reduce_liberty_misread
     sgf: 低K官子看错输棋.sgf
