@@ -111,6 +111,13 @@ tests:
     move: white
     no_move:
       - C10
+  - name: ladder16
+    sgf: 12496265-125-RoyalZero-lizf123.sgf
+    group: ladder
+    number: 58
+    move: white
+    no_move:
+      - O5
 
   # Life & Death tests
   - name: make_life1
