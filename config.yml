@@ -184,6 +184,13 @@ tests:
     move: black
     yes_move:
       - J1
+  - name: j_group_live2
+    sgf: 大猪嘴.sgf
+    group: lifedeath
+    number: 52
+    move: white
+    yes_move:
+      - R1
 
   # Large group sensitive tests
   - name: largegroup_no_liberty_dead
