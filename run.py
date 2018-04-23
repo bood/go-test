@@ -24,7 +24,7 @@ FAIL_STATUS = "%s[FAIL]%s" % (bcolors.FAIL, bcolors.ENDC)
 
 
 MULTI_RUN_GROUPS = ("ladder")
-DEFAULT_MULTI_RUNS = 10
+DEFAULT_MULTI_RUNS = 8
 
 
 group_score = {}
@@ -78,7 +78,7 @@ def mock_single_test(test):
     return ("TEST", result)
 
 
-def do_single_test(test):
+def do_single_test(test, rotation):
     if test.get('number'):
         if sysform =="Windows":
             gtp = "loadsgf .\sgf\%s %s\n" % (test['sgf'], test['number'])
@@ -90,7 +90,7 @@ def do_single_test(test):
         else:
             gtp = "loadsgf ./sgf/%s\n" % test['sgf']
     gtp += "time_settings 0 100 0\n"  # Ensure playouts are not limited on slow machines
-    gtp += "genmove %s" % test['move']
+    gtp += "heatmap %s\ngenmove %s" % (rotation, test['move'])
     listgtp = gtp.split('\n')
     gtp = "(echo " + " && echo ".join(listgtp) + ")"
     lines = subprocess.check_output("%s | %s" % (gtp, command), stderr=subprocess.STDOUT, shell=True, encoding='utf8').split("\n")
@@ -129,6 +129,8 @@ parser.add_argument('--case', action='append',
                     help='Only run specify cases')
 parser.add_argument('--group', action='append',
                     help='Only run cases of specify groups')
+parser.add_argument('--rotation', type=int,
+                    help='Only run cases of specify rotation')
 
 args = parser.parse_args()
 
@@ -146,6 +148,11 @@ tests = config['tests']
 
 my_print("Command: %s\n" % command)
 
+rotation = -1
+if args.rotation:
+    rotation = args.rotation
+    my_print("Rotation %s fixed\n" % rotation)
+
 for test in tests:
     name = test['name']
     group = test['group']
@@ -159,7 +166,7 @@ for test in tests:
     results = []
     for i in range(0, DEFAULT_MULTI_RUNS):
         my_print("%s " % i)
-        (line, result) = do_single_test(test)
+        (line, result) = do_single_test(test, rotation if rotation >= 0 else i)
         results.append(result)
     my_print("\n")
     print_multi_status(results)
