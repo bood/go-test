@@ -325,6 +325,14 @@ tests:
     move: white
     max_win_rate: 10
 
+  - name: endgame8
+    sgf: LZ1060_杨冬.sgf
+    group: endgame
+    number: 268
+    move: white
+    no_move:
+      - Q9
+
   - name: reduce_liberty_misread
     sgf: 低K官子看错输棋.sgf
     group: endgame
