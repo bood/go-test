@@ -132,6 +132,13 @@ tests:
     move: black
     yes_move:
       - O17
+  - name: ladder19
+    sgf: ladder19.sgf
+    group: ladder
+    number: 28
+    move: white
+    no_move:
+      - N4
 
   # Life & Death tests
   - name: make_life1

@@ -1,0 +1,6 @@
+(;GM[1]FF[4]RU[Chinese]DT[2018-05-05]SZ[19]KM[7.5]TM[3600]PB[Leela Zero 0.14 192x15]PW[Human]RE[W+7.5]
+C[Leela Zero options: -w ../192x15 --noponder --seed 5922048003111841579]
+
+;B[pp];W[pd];B[cp];W[dd];B[cf];W[fc];B[fp];W[qq];B[qp];W[pq]
+;B[nq];W[oq];B[op];W[nr];B[rq];W[rr];B[or];W[rp];B[qr];W[sq]
+;B[pr];W[rq];B[mr];W[np];B[mq];W[qn];B[no];W[mp])
