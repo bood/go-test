@@ -7,6 +7,7 @@ import yaml
 import argparse
 import sys
 import platform
+import os
 
 class bcolors:
     HEADER = '\033[95m'
@@ -162,6 +163,10 @@ for test in tests:
     if args.group and group not in args.group:
         continue
     my_print("%s - %s (%s)\n" % (name, group, sgf))
+
+    if not os.path.isfile(os.path.join('sgf', test['sgf'])):
+        my_print('SGF file %s not found\n' % test['sgf'])
+        continue
 
     results = []
     for i in range(0, DEFAULT_MULTI_RUNS):
