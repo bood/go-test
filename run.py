@@ -93,7 +93,7 @@ def do_single_test(test, rotation):
     gtp += "heatmap %s\ngenmove %s" % (rotation, test['move'])
     listgtp = gtp.split('\n')
     gtp = "(echo " + " && echo ".join(listgtp) + ")"
-    lines = subprocess.check_output("%s | %s" % (gtp, command), stderr=subprocess.STDOUT, shell=True, encoding='utf8').split("\n")
+    lines = subprocess.check_output("%s | %s" % (gtp, command), stderr=subprocess.STDOUT, shell=True).decode('utf-8').split("\n")
     debug([line for line in lines if re.search('Thinking at most', line)][0] + "\n")
     #   E1 ->     792 (V: 37.43%) (N: 31.68%) PV: E1 H5 F6 G6 F7 E13 D11 D10 E10 E9 F9 E11
     lines = [line for line in lines if re.match('^\s+[A-Z][0-9]+ +->|^[0-9]+\s+visits', line)]
